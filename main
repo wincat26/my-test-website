@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小港補習班</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .contact-form {
+            background-color: #e9ecef;
+            padding: 60px 0;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            height: 120px;
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .social-links {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .social-links a {
+            color: #007bff;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>小港在地30年，成績提升看得見！</h1>
+            <img src="path-to-your-image.jpg" alt="補習班環境" class="hero-image">
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <div class="container">
+            <div class="form-container">
+                <h2>家長留言後 我們會立即與您聯繫</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">名稱 *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">電子郵件 *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">電話</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="source">請問你如何得知我們？</label>
+                        <select id="source">
+                            <option value="">選取一個選項</option>
+                            <option value="search">搜尋引擎</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="ad">廣告</option>
+                            <option value="friend">朋友推薦</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">其他資訊</label>
+                        <textarea id="message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">送出</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <h2>聯絡我們</h2>
+                    <p>歡迎來到一個無限可能的世界，旅程就像目的地一樣令人興奮，每一刻都是在存在的畫布上留下印記的機會。唯一的限制就是你的想像力的範圍。</p>
+                    <p>地址：桂華街347號</p>
+                    <p>營業時間：週一～週五 1:30-9:30 PM</p>
+                    <p>電話：077916600</p>
+                    <p>Email：<a href="mailto:giraffe6600@gmail.com">giraffe6600@gmail.com</a></p>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.4235543202737!2d120.35163601540384!3d22.58328635185944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e05caf3a5137f%3A0x8dbbf05f76d9a5eb!2zODEz6auY6ZuE5biC5bCP娓t5Y2A5qGQ6I6I6KGXMzQ36Jmf!5e0!3m2!1szh-TW!2stw!4v1643825693015!5m2!1szh-TW!2stw" 
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="social-links">
+        <div class="container">
+            <a href="https://www.facebook.com/giraffe6600" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 這裡添加表單提交邏輯
+            alert('感謝您的留言，我們會盡快與您聯繫！');
+        });
+    </script>
+</body>
+</html>
