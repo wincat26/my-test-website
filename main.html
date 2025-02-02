@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小港補習班</title>
+    <title>育名補習班 - 長期鹿美語桂林分校</title>
     <style>
+        :root {
+            --primary-color: #FF7F50; /* 主要橙色 */
+            --secondary-color: #FFF5F1; /* 淺橙色背景 */
+            --text-color: #333333;
+            --light-text: #666666;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,24 +21,72 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
         }
 
-        .container {
+        /* 導覽列樣式 */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 主要內容樣式 */
+        main {
+            margin-top: 70px;
         }
 
         .hero {
-            background-color: #f8f9fa;
-            padding: 60px 0;
+            background-color: var(--secondary-color);
+            padding: 80px 0;
             text-align: center;
         }
 
         .hero h1 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
             font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #333;
+        }
+
+        .hero-subtitle {
+            color: var(--light-text);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
         }
 
         .hero-image {
@@ -40,172 +95,248 @@
             height: auto;
             margin: 0 auto;
             display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
+        /* 課程區塊樣式 */
+        .courses {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .courses h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 表單樣式 */
         .contact-form {
-            background-color: #e9ecef;
+            background-color: var(--secondary-color);
             padding: 60px 0;
         }
 
         .form-container {
             max-width: 600px;
             margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 10px;
+            padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 4px;
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
+            font-size: 1rem;
         }
 
         .submit-btn {
-            background-color: #007bff;
+            background-color: var(--primary-color);
             color: white;
-            padding: 12px 24px;
+            padding: 1rem 2rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
             width: 100%;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
         }
 
         .submit-btn:hover {
-            background-color: #0056b3;
+            background-color: #FF6B3D;
         }
 
-        .contact-info {
-            padding: 60px 0;
+        /* Footer 樣式 */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
         }
 
-        .info-grid {
+        .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .map-container {
-            width: 100%;
-            height: 400px;
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section p, 
+        .footer-section a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
             margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
-        }
-
+        /* 響應式設計 */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
-            .contact-form {
-                padding: 40px 0;
-            }
 
-            .form-container {
-                padding: 0 20px;
+            .course-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">育名補習班</a>
+            <div class="nav-links">
+                <a href="#">關於我們</a>
+                <a href="#">最新消息</a>
+                <a href="#">課程介紹</a>
+                <a href="#">預約諮詢</a>
+                <a href="#">常見問題</a>
+            </div>
+        </div>
+    </nav>
+
     <main>
         <section class="hero">
             <div class="container">
-                <h1>小港在地30年，成績提升看得見！</h1>
-                <img src="https://via.placeholder.com/800x450" alt="補習班環境" class="hero-image">
+                <h1>育名補習班</h1>
+                <p class="hero-subtitle">長期鹿美語桂林分校</p>
+                <img src="./123.webp" alt="補習班環境" class="hero-image">
+            </div>
+        </section>
+
+        <section class="courses">
+            <h2>我們的班級</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3>兒童美語課程</h3>
+                    <p>透過多樣化的趣味教學活動，結合主題式的學習方式與趣味主題的遊戲教學，利用互動遊戲和各類活動，奠定孩子穩健的基礎。</p>
+                </div>
+                <div class="course-card">
+                    <h3>國中英文先修</h3>
+                    <p>依據學生程度制定課程，加強文法概念與應用，幫助學生在國中課程無縫接軌。</p>
+                </div>
+                <div class="course-card">
+                    <h3>高中數理加強班</h3>
+                    <p>針對各年級學生量身打造課程，強化基礎觀念，培養解題能力。</p>
+                </div>
             </div>
         </section>
 
         <section class="contact-form">
-            <div class="container">
-                <div class="form-container">
-                    <h2>家長留言後 我們會立即與您聯繫</h2>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">名稱 *</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">電子郵件 *</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">電話</label>
-                            <input type="tel" id="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="source">請問你如何得知我們？</label>
-                            <select id="source">
-                                <option value="">選取一個選項</option>
-                                <option value="search">搜尋引擎</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="ad">廣告</option>
-                                <option value="friend">朋友推薦</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">其他資訊</label>
-                            <textarea id="message"></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">送出</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-info">
-            <div class="container">
-                <div class="info-grid">
-                    <div>
-                        <h2>聯絡我們</h2>
-                        <p>歡迎來到一個無限可能的世界，旅程就像目的地一樣令人興奮，每一刻都是在存在的畫布上留下印記的機會。</p>
-                        <br>
-                        <p>地址：桂華街347號</p>
-                        <p>營業時間：週一～週五 1:30-9:30 PM</p>
-                        <p>電話：077916600</p>
-                        <p>Email：<a href="mailto:giraffe6600@gmail.com">giraffe6600@gmail.com</a></p>
+            <div class="form-container">
+                <h2>立即預約免費諮詢</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">學生姓名 *</label>
+                        <input type="text" id="name" required>
                     </div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.4235543202737!2d120.35163601540384!3d22.58328635185944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e05caf3a5137f%3A0x8dbbf05f76d9a5eb!2zODEz6auY6ZuE5biC5bCP娓t5Y2A5qGQ6I6I6KGXMzQ36Jmf!5e0!3m2!1szh-TW!2stw!4v1643825693015!5m2!1szh-TW!2stw"
-                            allowfullscreen=""
-                            loading="lazy">
-                        </iframe>
+                    <div class="form-group">
+                        <label for="parent">家長姓名 *</label>
+                        <input type="text" id="parent" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="phone">聯絡電話 *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade">就讀年級</label>
+                        <select id="grade">
+                            <option value="">請選擇年級</option>
+                            <option value="國小">國小</option>
+                            <option value="國中">國中</option>
+                            <option value="高中">高中</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">諮詢內容</label>
+                        <textarea id="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">立即預約</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container" style="text-align: center; padding: 20px 0;">
-            <a href="https://www.facebook.com/giraffe6600" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/600px-Facebook_Logo_%282019%29.png" 
-                     alt="Facebook" 
-                     style="width: 30px; height: 30px;">
-            </a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>聯絡資訊</h3>
+                <p>地址：桂華街347號</p>
+                <p>電話：077916600</p>
+                <p>Email：giraffe6600@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>營業時間</h3>
+                <p>週一至週五：13:30 - 21:30</p>
+                <p>週六、週日：請來電詢問</p>
+            </div>
+            <div class="footer-section">
+                <h3>快速連結</h3>
+                <p><a href="#">關於我們</a></p>
+                <p><a href="#">課程資訊</a></p>
+                <p><a href="#">常見問題</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 育名補習班 版權所有</p>
         </div>
     </footer>
 </body>
