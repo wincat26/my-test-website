@@ -316,6 +316,68 @@
       left: 84%;
       border-left-color: var(--aov-purple);
     }
+
+    @media (max-width: 1200px) {
+  .page-container {
+    width: 95%;
+    padding: 20px 3vw;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-metrics-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .traffic-block,
+  .cvr-block,
+  .aov-block {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 12px 0;
+  }
+  h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .block-header {
+    font-size: 16px;
+    padding: 8px 0;
+  }
+  .formula-block,
+  .content-block {
+    padding: 10px 4px !important;
+  }
+  .metric-item {
+    padding: 0 2px;
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .icon-circle {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    margin-right: 7px;
+  }
+  .metric-title,
+  .metric-desc {
+    font-size: 12px;
+  }
+  .conclusion-item,
+  .approach-item {
+    padding: 6px 2px;
+  }
+}
   </style>
 </head>
 <body>
