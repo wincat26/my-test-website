@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>流量漏斗矩陣說明</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", "微軟正黑體", sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .funnel-svg {
+      width: 100%;
+      height: auto;
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .matrix-table th, .matrix-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .matrix-table th, .matrix-table td {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>什麼是流量漏斗矩陣？</h1>
+
+    <div class="section">
+      <p>流量漏斗矩陣是一種用來分析行銷流程的模型，幫助我們將用戶從「看到商品」一路引導到「實際購買」甚至「回購與推薦」。</p>
+    </div>
+
+    <div class="section">
+      <h2>漏斗視覺化說明</h2>
+      <svg viewBox="0 0 400 500" class="funnel-svg" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,50 350,50 300,150 100,150" fill="#b3e5fc" />
+        <text x="200" y="100" text-anchor="middle" font-size="18" fill="#000">觸及層</text>
+        <polygon points="100,150 300,150 275,250 125,250" fill="#80cbc4" />
+        <text x="200" y="200" text-anchor="middle" font-size="18" fill="#000">認知層</text>
+        <polygon points="125,250 275,250 250,350 150,350" fill="#ffcc80" />
+        <text x="200" y="300" text-anchor="middle" font-size="18" fill="#000">轉換層</text>
+        <polygon points="150,350 250,350 225,450 175,450" fill="#ef9a9a" />
+        <text x="200" y="400" text-anchor="middle" font-size="18" fill="#000">增值層</text>
+      </svg>
+    </div>
+
+    <div class="section">
+      <h2>矩陣應用說明</h2>
+      <p>我們將不同「行為階段」搭配「人群屬性」，針對性設計策略，達到最有效的行銷結果。</p>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>階段</th>
+            <th>人群</th>
+            <th>建議操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>觸及</td>
+            <td>新客、潛在節慶消費者</td>
+            <td>FB/IG廣告、關鍵字搜尋、SEO內容</td>
+          </tr>
+          <tr>
+            <td>認知</td>
+            <td>點擊過廣告但未購者</td>
+            <td>再行銷、EDM導購、限時折扣</td>
+          </tr>
+          <tr>
+            <td>轉換</td>
+            <td>加入購物車者、企業詢價者</td>
+            <td>免運優惠、企業包裝、客服介入</td>
+          </tr>
+          <tr>
+            <td>增值</td>
+            <td>已購者、老客</td>
+            <td>會員回購、推薦獎勵、LTV自動化</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>總結</h2>
+      <p>運用漏斗矩陣思維，我們不再「亂槍打鳥」，而是針對每一層、每一種人，提供正確誘因與內容，讓預算轉化成實際訂單與顧客關係。</p>
+    </div>
+  </div>
+</body>
+</html>
